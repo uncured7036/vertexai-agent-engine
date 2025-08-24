@@ -1,0 +1,11 @@
+steps:
+  - name: 'python:3.10'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+        python deploy_agent.py
+
+timeout: '900s'
