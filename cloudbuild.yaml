@@ -9,3 +9,6 @@ steps:
         python deploy_agent.py
 
 timeout: '950s'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
