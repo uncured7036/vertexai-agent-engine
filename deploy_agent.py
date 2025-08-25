@@ -1,11 +1,12 @@
 import vertexai
 import os
 
-PROJECT_ID = os.environ.get('_PROJECT_ID')
-LOCATION = os.environ.get('_LOCATION')
-AGENT_DISPLAY_NAME = os.environ.get('_AGENT_DISPLAY_NAME')
-AGENT_ID = os.environ.get('_AGENT_ID')
-STAGING_BUCKET = os.environ.get('_BUCKET')
+PROJECT_ID = os.environ.get('PROJECT_ID')
+LOCATION = os.environ.get('LOCATION')
+AGENT_DISPLAY_NAME = os.environ.get('AGENT_DISPLAY_NAME')
+AGENT_ID = os.environ.get('AGENT_ID')
+STAGING_BUCKET = os.environ.get('BUCKET')
+
 print(f'PROJECT_ID: {PROJECT_ID}')
 print(f'LOCATION: {LOCATION}')
 print(f'AGENT_DISPLAY_NAME: {AGENT_DISPLAY_NAME}')

@@ -7,6 +7,12 @@ steps:
         pip install --upgrade pip
         pip install -r requirements.txt
         python deploy_agent.py
+    env:
+      - 'PROJECT_ID=$_PROJECT_ID'
+      - 'LOCATION=$_LOCATION'
+      - 'AGENT_DISPLAY_NAME=$_AGENT_DISPLAY_NAME'
+      - 'AGENT_ID=$_AGENT_ID'
+      - 'BUCKET=$_BUCKET'
 
 timeout: '950s'
 
