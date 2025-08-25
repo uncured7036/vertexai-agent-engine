@@ -6,6 +6,11 @@ LOCATION = os.environ.get('_LOCATION')
 AGENT_DISPLAY_NAME = os.environ.get('_AGENT_DISPLAY_NAME')
 AGENT_ID = os.environ.get('_AGENT_ID')
 STAGING_BUCKET = os.environ.get('_BUCKET')
+print(f'PROJECT_ID: {PROJECT_ID}')
+print(f'LOCATION: {LOCATION}')
+print(f'AGENT_DISPLAY_NAME: {AGENT_DISPLAY_NAME}')
+print(f'AGENT_ID: {AGENT_ID}')
+print(f'STAGING_BUCKET: {STAGING_BUCKET}')
 
 vertexai.init(
     project=PROJECT_ID,
