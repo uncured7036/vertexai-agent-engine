@@ -19,12 +19,12 @@ vertexai.init(
     staging_bucket=STAGING_BUCKET,
 )
 
-import trip_agent
+from multi_tool_agent.agent import root_agent
 
 from vertexai.preview import reasoning_engines
 
 app = reasoning_engines.AdkApp(
-    agent=trip_agent.create(),
+    agent=root_agent,
     enable_tracing=True,
 )
 
@@ -33,27 +33,19 @@ from vertexai import agent_engines
 if not AGENT_ID:
     remote_agent = agent_engines.create(
         app,
-        requirements=[
-            'cloudpickle==3.1.1',
-            'pydantic==2.11.7',
-            'google-cloud-aiplatform[agent_engines,adk]==1.110.0',
-        ],
+        requirements=['google-cloud-aiplatform[agent_engines,adk]'],
         display_name=AGENT_DISPLAY_NAME,
         extra_packages=[
-            './trip_agent/'
+            './multi_tool_agent/'
         ],
     )
 else:
     remote_agent = agent_engines.update(
         resource_name=AGENT_ID,
         agent_engine=app,
-        requirements=[
-            'cloudpickle==3.1.1',
-            'pydantic==2.11.7',
-            'google-cloud-aiplatform[agent_engines,adk]==1.110.0',
-        ],
+        requirements=['google-cloud-aiplatform[agent_engines,adk]'],
         display_name=AGENT_DISPLAY_NAME,
         extra_packages=[
-            './trip_agent/'
+            './multi_tool_agent/'
         ],
     )
