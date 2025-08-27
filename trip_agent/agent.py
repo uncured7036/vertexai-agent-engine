@@ -1,8 +1,4 @@
 from google.adk.agents import Agent
-from vertexai.preview.reasoning_engines import AdkApp
-
-def empty():
-    pass
 
 def create():
     agent = Agent(
@@ -38,6 +34,5 @@ Instructions:
 - Use rfc3339 time format.
 - All keys must be present and correctly spelled.
         """,
-        tools=[empty],
     )
-    return AdkApp(agent=agent)
+    return agent
