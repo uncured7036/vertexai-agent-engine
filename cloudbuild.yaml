@@ -14,7 +14,7 @@ steps:
       - 'AGENT_ID=$_AGENT_ID'
       - 'BUCKET=$_BUCKET'
 
-timeout: '960s'
+timeout: '950s'
 
 options:
   logging: CLOUD_LOGGING_ONLY
