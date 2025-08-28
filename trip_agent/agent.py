@@ -1,4 +1,5 @@
 from google.adk.agents import Agent
+from vertexai.preview.reasoning_engines import AdkApp
 
 def create():
     agent = Agent(
@@ -35,4 +36,4 @@ Instructions:
 - All keys must be present and correctly spelled.
         """,
     )
-    return agent
+    return AdkApp(agent=agent)
