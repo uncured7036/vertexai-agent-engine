@@ -6,7 +6,7 @@ def create():
         name="trip_itinerary_agent",
         model="gemini-2.5-flash",
         description="Agent to generate itinerary.",
-        instruction="""You are an itinerary generator. Please responde with a detailed timetable. The output must follow the schema below:
+        instruction="""You are an itinerary generator. Please respond with a title for this trip and a detailed timetable. The output must follow the schema below:
 
 {
     title: "string",
@@ -37,4 +37,4 @@ Instructions:
 - All keys must be present and correctly spelled.
         """,
     )
-    return AdkApp(agent=agent)
+    return agent
