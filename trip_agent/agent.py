@@ -9,6 +9,7 @@ def create():
         instruction="""You are an itinerary generator. Please responde with a detailed timetable. The output must follow the schema below:
 
 {
+    title: "string",
     activities: [
         {
             type: "sightseeing, restaurant, shopping, accommodation, freeTime, transport, other",
