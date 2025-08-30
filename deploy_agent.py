@@ -42,7 +42,7 @@ if not AGENT_ID:
         extra_packages=[
             './trip_agent/'
         ],
-        container_concurrency=5,
+        #container_concurrency=5,
     )
 else:
     remote_agent = agent_engines.update(
@@ -57,5 +57,5 @@ else:
         extra_packages=[
             './trip_agent/'
         ],
-        container_concurrency=5,
+        #container_concurrency=5,
     )
