@@ -20,7 +20,7 @@ def create():
             transportType: "train, highSpeedTrain, flight, bus, taxi, bike, walk, car, boat, motorcycle, other",
             note: "string",
             placeUri: "string",
-            latlng: {
+            latLng: {
                 latitude: double,
                 longitude: double,
             },
@@ -40,7 +40,7 @@ Instructions:
 - Do not include any explanations, markdown, or extra text.
 - Use rfc3339 time format.
 - All keys must be present and correctly spelled.
-- Retrieve the values of "latlng" and "placeUri" using the get_detail_by_google_map tool.
+- Retrieve the values of "latLng" and "placeUri" using the get_detail_by_google_map tool.
         """,
         tools=[get_detail_by_google_map],
     )

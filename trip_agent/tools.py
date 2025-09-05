@@ -13,7 +13,7 @@ def get_detail_by_google_map(location: str) -> dict:
     }
     resp = requests.post(textsearch_url, json=payload, headers=headers)
     if not resp.ok:
-        return {'lanlng': None}
+        return {'latLng': None}
     data = resp.json()
     place = random.choice(data['places'])
     detail_url = f'https://places.googleapis.com/v1/places/{place["id"]}'
@@ -28,10 +28,10 @@ def get_detail_by_google_map(location: str) -> dict:
     }
     resp = requests.get(detail_url, headers=headers)
     if not resp.ok:
-        return {'lanlng': None}
+        return {'latLng': None}
     data = resp.json()
     return {
-        'lanlng': data['location'],
+        'latLng': data['location'],
         'placeUri': data['googleMapsLinks']['placeUri'],
     }
 
