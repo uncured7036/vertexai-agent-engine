@@ -5,6 +5,10 @@ import random
 
 def get_detail_by_google_map(location: str) -> dict:
     GOOGLEMAP_KEY = os.environ.get('GOOGLEMAP_KEY')
+    result = {
+        'latLng': None,
+        'placeUri': None,
+    }
     textsearch_url = 'https://places.googleapis.com/v1/places:searchText'
     payload = {'textQuery': location}
     headers = {
@@ -13,7 +17,7 @@ def get_detail_by_google_map(location: str) -> dict:
     }
     resp = requests.post(textsearch_url, json=payload, headers=headers)
     if not resp.ok:
-        return {'latLng': None}
+        return result
     data = resp.json()
     place = random.choice(data['places'])
     detail_url = f'https://places.googleapis.com/v1/places/{place["id"]}'
@@ -28,12 +32,11 @@ def get_detail_by_google_map(location: str) -> dict:
     }
     resp = requests.get(detail_url, headers=headers)
     if not resp.ok:
-        return {'latLng': None}
+        return result
     data = resp.json()
-    return {
-        'latLng': data['location'],
-        'placeUri': data['googleMapsLinks']['placeUri'],
-    }
+    result['latLng'] = data['location']
+    result['placeUri'] = data['googleMapsLinks']['placeUri']
+    return result
 
 
 if __name__ == '__main__':
