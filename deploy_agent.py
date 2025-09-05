@@ -6,6 +6,7 @@ LOCATION = os.environ.get('LOCATION')
 AGENT_DISPLAY_NAME = os.environ.get('AGENT_DISPLAY_NAME')
 AGENT_ID = os.environ.get('AGENT_ID')
 STAGING_BUCKET = os.environ.get('BUCKET')
+GOOGLEMAP_KEY = os.environ.get('GOOGLEMAP_KEY')
 
 vertexai.init(
     project=PROJECT_ID,
@@ -36,7 +37,7 @@ if not AGENT_ID:
         extra_packages=[
             './trip_agent/'
         ],
-        #container_concurrency=5,
+        env_vars={'GOOGLEMAP_KEY': GOOGLEMAP_KEY},
     )
 else:
     remote_agent = agent_engines.update(
@@ -51,5 +52,5 @@ else:
         extra_packages=[
             './trip_agent/'
         ],
-        #container_concurrency=5,
+        env_vars={'GOOGLEMAP_KEY': GOOGLEMAP_KEY},
     )

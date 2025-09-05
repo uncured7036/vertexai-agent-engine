@@ -13,6 +13,7 @@ steps:
       - 'AGENT_DISPLAY_NAME=$_AGENT_DISPLAY_NAME'
       - 'AGENT_ID=$_AGENT_ID'
       - 'BUCKET=$_BUCKET'
+      - 'GOOGLEMAP_KEY=$_GOOGLEMAP_KEY'
 
 timeout: '960s'
 
