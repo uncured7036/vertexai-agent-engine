@@ -44,9 +44,9 @@ else:
         resource_name=AGENT_ID,
         agent_engine=app,
         requirements=[
-            'cloudpickle==3.1.1',
-            'pydantic==2.11.7',
-            'google-cloud-aiplatform[agent_engines,adk]==1.110.0',
+            'cloudpickle',
+            'pydantic',
+            'google-cloud-aiplatform[agent_engines,adk]',
         ],
         display_name=AGENT_DISPLAY_NAME,
         extra_packages=[
