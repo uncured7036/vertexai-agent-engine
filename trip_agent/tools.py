@@ -18,6 +18,8 @@ def get_detail_by_google_map(location: str) -> dict:
     if not resp.ok:
         return result
     data = resp.json()
+    if len(data['places']) < 1:
+        return result
     place = data['places'][0]
     detail_url = f'https://places.googleapis.com/v1/places/{place["id"]}'
     headers = {
