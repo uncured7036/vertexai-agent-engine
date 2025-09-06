@@ -15,7 +15,7 @@ steps:
       - 'BUCKET=$_BUCKET'
       - 'GOOGLEMAP_KEY=$_GOOGLEMAP_KEY'
 
-timeout: '960s'
+timeout: '950s'
 
 options:
   logging: CLOUD_LOGGING_ONLY
