@@ -14,9 +14,10 @@ def create():
         {
             type: "sightseeing, restaurant, shopping, accommodation, freeTime, transport, other",
             location: "string",
-            startTime: "rfc3339",
+            "startTimeUtc": "2025-09-06T07:00:00Z",
+            "endTimeUtc": "2025-09-06T07:00:00Z",
+            "timeZone": "Europe/Paris",
             duration: "minutes",
-            endTime: "rfc3339",
             transportType: "train, highSpeedTrain, flight, bus, taxi, bike, walk, car, boat, motorcycle, other",
             note: "string",
             placeUri: "string",
@@ -38,7 +39,8 @@ Instructions:
 - Output must be valid JSON.
 - No extra commentary or formatting.
 - Do not include any explanations, markdown, or extra text.
-- Use rfc3339 time format.
+- Use the RFC 3339 time format without a timezone offset.
+- Fill in the timeZone for the location to be visited.
 - All keys must be present and correctly spelled.
 - Retrieve the values of "latLng" and "placeUri" using the get_detail_by_google_map tool.
         """,
