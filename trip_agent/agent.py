@@ -1,5 +1,6 @@
 from google.adk.agents import Agent
 from .tools import get_detail_by_google_map
+from .tools import get_candidate_places_by_google_map
 
 def create():
     agent = Agent(
@@ -43,7 +44,8 @@ Instructions:
 - Fill in the timeZone for the location to be visited.
 - All keys must be present and correctly spelled.
 - Retrieve the values of "latLng" and "placeUri" using the get_detail_by_google_map tool.
+- Each activity should be assigned to a specific place. You can retrieve candidate locations using the get_candidate_places_by_google_map tool, which takes the location name and activity type as inputs.
         """,
-        tools=[get_detail_by_google_map],
+        tools=[get_detail_by_google_map, get_candidate_places_by_google_map],
     )
     return agent
