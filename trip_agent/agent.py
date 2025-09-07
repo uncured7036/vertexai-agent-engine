@@ -40,7 +40,7 @@ Instructions:
 - Output must be valid JSON.
 - No extra commentary or formatting.
 - Do not include any explanations, markdown, or extra text.
-- Use the RFC 3339 time format without a timezone offset.
+- The time is based on the timezone of the visited location and should be formatted using RFC 3339.
 - Fill in the timeZone for the location to be visited.
 - All keys must be present and correctly spelled.
 - Retrieve the values of "latLng" and "placeUri" using the get_detail_by_google_map tool.
