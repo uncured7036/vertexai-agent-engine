@@ -38,8 +38,8 @@ def create():
 
 Instructions:
 - Output must be valid JSON.
-- No extra commentary or formatting.
-- Do not include any explanations, markdown, or extra text.
+- The JSON should begin with `STARTJSON` and end with "ENDJSON".
+- Please confirm and explain any modification, unless I've explicitly instructed you to output the JSON directly.'
 - The time is based on the timezone of the visited location and should be formatted using RFC 3339, then converted to UTC..
 - Fill in the timeZone for the location to be visited.
 - All keys must be present and correctly spelled.
