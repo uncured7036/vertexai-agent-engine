@@ -45,6 +45,8 @@ Instructions:
 - All keys must be present and correctly spelled.
 - Retrieve the values of "latLng" and "placeUri" using the get_detail_by_google_map tool.
 - Each activity should be assigned to a specific place. You can retrieve candidate locations using the get_candidate_places_by_google_map tool, which takes the location name and activity type as inputs.
+- The activity type must be one of the following: sightseeing, restaurant, shopping, accommodation, freeTime, transport, or other.
+- The transportType must be one of the following: train, highSpeedTrain, flight, bus, taxi, bike, walk, car, boat, motorcycle, or other
         """,
         tools=[get_detail_by_google_map, get_candidate_places_by_google_map],
     )
