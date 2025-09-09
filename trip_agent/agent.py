@@ -50,7 +50,7 @@ Instructions:
 - Please ensure that the each activity has the continuous time slot. Use `freeTime` to fill any gaps and prevent empty activity slots.
 - Consolidate activities into childActivities when their lantitude and longitude are the same.
 - Trim the location name to a maximum 10 words.
-- If the activity location is not a specific place, leave the `placeUri` and `latLng` fields empty.
+- If the activity location is not a specific place, remove the `placeUri` and `latLng` fields.
         """,
         tools=[get_detail_by_google_map, get_candidate_places_by_google_map],
     )
